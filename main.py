@@ -150,6 +150,7 @@ protocol_mapping = {
     255: "Reserved",
 }
 
+
 def load_lookup_table(lookup_filename):
     lookup_dict = {}
 
