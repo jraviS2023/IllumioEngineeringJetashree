@@ -5,13 +5,17 @@
 1. <b> Prepare the Input File: </b> Ensure you have your flow_logs.txt file ready. This file contains the flow log data that will be processed by the script [NOTE: It is included in the project already!]
 2. <b> Run the Script: </b> After installing the dependencies and preparing your input file, you can run the main Python script with Python 3:
 
-```python3 main.py```
+```
+python3 main.py
+```
 
 ## Assumptions:
 
 1. <b> Flow log file format: </b> The flow log data will follow the AWS VPC flow log format, version 2, as outlined [here](https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html#flow-logs-fields). Expect the standard set of data like srcaddr, dstaddr, srcport, and dstport—you know, all the typical flow log fun!
 
-```<version> <account-id> <interface-id> <srcaddr> <dstaddr> <srcport> <dstport> <protocol> <packets> <bytes> <start> <end> <action> <log-status>```
+```
+<version> <account-id> <interface-id> <srcaddr> <dstaddr> <srcport> <dstport> <protocol> <packets> <bytes> <start> <end> <action> <log-status>
+```
 
 2. <b> Lookup table format: </b> The lookup table will be your trusty CSV file, where each row has a combination of `dstport`, `protocol`, and the corresponding `tag`. It’s like your flow log GPS for tag mapping.
 3. <b> Case-insensitivity: </b> The algorithm is all about inclusivity here. Both port/protocol matches and tag mappings are case-insensitive. Whether you shout your protocol as TCP or whisper it as tcp, the algorithm has got your back.
