@@ -203,7 +203,7 @@ def write_output(tag_counts, portprotocol_counts, untagged_counts, output_filena
         output_file.write(f"Untagged,{untagged_counts}\n")
 
         output_file.write("\nPort/Protocol Combination Counts:\n")
-        output_file.write(" Port,Protocol,Count\n")
+        output_file.write("Port,Protocol,Count\n")
         for (port, protocol), count in sorted(portprotocol_counts.items()):
             output_file.write(f"{port},{protocol},{count}\n")
 
